@@ -1,0 +1,112 @@
+{% extends 'estore/main.html' %}
+{% block title %}Cart{% endblock title %}
+{% block navbar %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="/">Home </a>
+    </li>
+
+{% endblock navbar %}
+   <!--<h1>Cart</h1>
+{% for item in cart_products %}
+<h1>item name : {{item.product.product_name}}</h1>
+<h1>Total Items : {{item.total_items}}</h1>
+
+{% endfor %}-->
+{% block content %}
+
+<div>
+    <div class="container" style="margin-top: 20px;">
+      <div class="row bg-primary">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <a href="{% url 'home' %}">
+            <button class="btn text-primary btn-shop" >Countinue Shoping</button>
+            </a>
+        </div>
+
+      </div>
+      <div class="row bg-primary row-mr">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-3">
+            <h4 class="text-center row-mrh4">Items:{{cart_items}}</h4>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-3">
+            <h4 class="text-center row-mrh4">Total:${{total_products_price}}</h4>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-3 text-center">
+            <a href="{% url 'checkout' %}">
+            <button  class="btn btn-checkout text-center">Checkout</button>
+            </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="container prod-con bg-danger">
+       <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+          <table class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">
+            <tr style="padding-top: 10px;">
+              <th></th>
+              <th class="">Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+            {% for item in cart_products %}
+            <tr class="tr-product ">
+              <td>
+                <img src="/media/{{item.product.product_image}}" height="50px" width="100px"/>
+              </td>
+              <td class="text-white">{{item.product.product_name}}</td>
+              <td class="text-white">${{item.product.product_price}}</td>
+              <td class="text-white">
+                <button id="{{item.product.product_id}}" class="action-btn text-white add_to_cart" name="add">+</button>
+                  {{item.total_items}}
+                <button id="{{item.product.product_id}}" class="action-btn text-white add_to_cart" name="remove">-&nbsp;</button>
+
+                </td>
+              <td class="text-white">${{item.total_price}}</td>
+            </tr>
+              {% endfor %}
+          </table>
+
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content%}
+
+{% block script %}
+  <script language="javascript">
+
+
+    $('.add_to_cart').click(function(){
+
+    //send request to server
+        var productId=this.id;
+        var action=this.name;
+        updateCart(productId,action);
+
+    });
+        function updateCart(id,action){
+        console.log(id);
+        console.log(action);
+        var url="/update_cart/";
+        fetch(url,{
+        method:'POST',
+        headers:{
+        'Content-Type':'application/json',
+        'X-CSRFToken':csrftoken,
+        },
+        body:JSON.stringify({
+        "product_id":id,
+        "action":action
+        })
+        }).then((response)=>{
+        return response.json();
+        })
+        history.go(0)
+
+    }
+
+</script>
+   {% endblock script %}

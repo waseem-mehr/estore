@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Add BootStrap CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, PoppeR.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'estore/styles/style.css' %}" type="text/css"/>
+
+    <title>{% block title %}{% endblock title%}</title>
+    <script>
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+</script>
+
+
+</head>
+<body>
+   <div class="countainer-fluid search-container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 col-lg-6 col-sm-12 ">
+
+
+      </div>
+      <div class="col-md-6 col-xs-12 col-lg-6 ">
+             <form class="form-inline my-2 " method="get" action="/search/">
+      <input class="form-control bt-mr col-md-9" type="search" placeholder="Search Product" aria-label="Search" name="search">
+      <button class="btn bt-mr my-2 col-md-2 my-xs-12 btn-mine" type="submit">Search</button>
+    </form>
+
+      </div>
+
+    </div>
+
+  </div>
+<div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'home' %}">
+    <img src="{% static '/estore/images/download.png' %}" width="90" height="90" alt="">
+            </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+               {% block navbar %}{% endblock navbar%}
+
+        </ul>
+        <a href="/cart/">
+          <p class="cart-items-count" id="cart-items-count">{{cart_items}}</p>
+          <img src="{% static '/estore/images/cart.png' %}" class="cart-img" height="50" width="50"/>
+        </a>
+      </div>
+    </nav>
+</div>
+<div>
+</div>
+    {% block content %}{% endblock content%}
+
+    <div>
+        <div class="container-fluid footer">
+  <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+        <h1 class="text-center footer-text">&copy; Developed By Wasim 2020</h1>
+    </div>
+
+  </div>
+
+</div>
+
+    </div>
+{% block script %}
+{% endblock script %}
+
+</body>
+</html>

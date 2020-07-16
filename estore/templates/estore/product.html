@@ -1,0 +1,75 @@
+
+{% extends 'estore/main.html' %}
+{% block title %}{{product.prod_name}}{% endblock title %}
+{% block navbar %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="/">Home </a>
+    </li>
+
+{% endblock navbar %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+            <img src="/{{product.prod_image.url}}" height="450" width="100%"/>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 mr-auto">
+            <div class="card" style="height:28rem">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{product.prod_name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted text-center">{{product.prod_category}}</h6>
+    <p class="card-text text-center">{{product.prod_description}}.</p>
+    <h1 class="text-center">Price : ${{product.prod_price}}</h1><br>
+    <div class="text-center">
+      <button class="card-link btn-mine btn add_to_cart" id="{{product.prod_id}}" name="add">Add To Cart</button>
+    </div>
+  </div>
+  </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock content%}
+{% block script %}
+<script language="javascript">
+
+
+    $('.add_to_cart').click(function(){
+
+    //send request to server
+        var productId=this.id;
+        var action=this.name;
+        updateCart(productId,action);
+
+    });
+        function updateCart(id,action){
+        console.log(id);
+        console.log(action);
+        var url="/update_cart/";
+        fetch(url,{
+        method:'POST',
+        headers:{
+        'Content-Type':'application/json',
+        'X-CSRFToken':csrftoken,
+        },
+        body:JSON.stringify({
+        "product_id":id,
+        "action":action
+        })
+        }).then((response)=>{
+        return response.json();
+        }).then((data)=>{
+        console.log(data);
+        })
+        history.go(0);
+    }
+
+</script>
+{% endblock script %}

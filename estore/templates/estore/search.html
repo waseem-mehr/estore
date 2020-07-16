@@ -1,0 +1,55 @@
+
+{% extends 'estore/main.html' %}
+{% block title %}{{products.0.prod_name}}{% endblock title %}
+{% block navbar %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="/">Home </a>
+    </li>
+
+{% endblock navbar %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+    <div class="row">
+        {% if len > 0 %}
+          {% for product in products %}
+
+          <div class="col-12 col-md-3 col-sm-12 cart-items">
+            <a href="/store/{{product.prod_name}}/product/{{product.prod_id}}" style="color: black;
+            text-decoration: none;">
+              <div class="card" style="">
+                    <img src="/{{product.prod_image.url}}" class="card-img-top" alt="..."
+                    height="200" width="200">
+                  <div class="card-body" style="margin-top:-45px">
+                    <h5 class="card-title">{{product.prod_name}}</h5>
+                        <p class="card-text">{{product.prod_description}}</p>
+                         </div>
+              </div>
+            </a>
+
+          </div>
+
+          {% endfor %}
+        {% endif %}
+        {% if len == 0 %}
+            <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">
+            <h1 class="text-found text-danger text-center">there is no item found</h1>
+            </div>
+           {% endif %}
+
+    </div>
+
+</div>
+
+
+{% endblock content%}
+{% block script %}
+<script language="javascript">
+
+
+
+</script>
+{% endblock script %}
+

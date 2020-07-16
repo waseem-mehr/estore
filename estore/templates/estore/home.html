@@ -1,0 +1,75 @@
+
+{% extends 'estore/main.html' %}
+{% block title %}Home{% endblock title %}
+{% block navbar %}
+
+    <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   {% for product in products %}
+                        <a class="dropdown-item" href="/store/{{product.category}}">{{product.category}}</a>
+                    {% endfor %}
+                </div>
+    </li>
+
+{% endblock navbar %}
+{% block content %}
+
+<a href="/store/{{products.0.category}}">
+ <div class="container-fluid"
+
+ >
+              <div class="row">
+
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 bc"
+                  style="
+                background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(28,14,14,1) 0%, rgba(104,196,227,0) 94%, rgba(104,196,227,0.003705705915178603) 99%),url({{products.0.category_image.url}});
+                background-repeat: no-repeat;
+                background-size:100% 100%;
+                height: 320px;
+                width: 100%;">
+                    <div>
+
+                          <h1 class="text-center txt-mr" style="color: white;">{{products.0.category}}</h1>
+                        </div>
+
+                    </div>
+
+
+                  </div>
+ </div>
+     </a>
+
+  <div class="container-fluid">
+      <div class="row">
+        {% for product in products|slice:"1:" %}
+
+
+                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 bc"
+                    style="background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(28,14,14,1) 0%, rgba(104,196,227,0) 94%, rgba(104,196,227,0.003705705915178603) 99%),url(/{{product.category_image.url}});"
+                    >
+                        <a class="a-container" href="/store/{{product.category}}" >
+                        <div class="">
+                          <h1 class="text-center txt-mr " style="color: white;">{{product.category}}</h1>
+                        </div>
+                            </a>
+                    </div>
+
+
+
+          {% endfor %}
+
+      </div>
+
+  </div>
+
+
+{% endblock content%}
+{% block script %}
+   <script>
+
+
+   </script>
+   {% endblock script %}

@@ -1,0 +1,90 @@
+{% extends 'estore/main.html' %}
+{% block title %}Checkout{% endblock title %}
+{% block content %}
+    <div class="container" style="margin-top: 20px;">
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
+                <div class="sheep-info">
+                <div class="row">
+                  <div class="col col-xs-12">
+                    <input type="text" class="form-control" placeholder="Name...">
+                  </div>
+                  <div class="col col-xs-12">
+                    <input type="text" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+                <h1 class="ship">Shipping Information</h1>
+                <div class="row">
+                  <div class="col col-xs-12">
+                    <input type="text" class="form-control" placeholder="Address...">
+                  </div>
+                  <div class="col col-xs-12">
+                    <input type="text" class="form-control" placeholder="City...">
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                  <div class="col col-xs-12">
+                    <input type="text" class="form-control" placeholder="State...">
+                  </div>
+                  <div class="col col-xs-12">
+                    <input type="text" class="form-control" placeholder="Zip Code...">
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 14px;">
+                  <div class="col">
+                    <button class="form-control
+                     btn btn-success" id="con">Continue</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ">
+                <div class="sheep-amount">
+                <div class="row">
+                  <div class="col col-xs-12">
+                   <a href="{% url 'cart' %}">
+                   <button class="form-control
+                   btn-mine btn ">Back To Cart</button>
+                   </a>
+                  </div>
+                  <div class="col col-xs-12">
+
+                  </div>
+                </div>
+                <h1 class="ship">Order Summary</h1>
+                <div class="row">
+                  <div class="col col-xs-12">
+
+                  </div>
+                  <div class="col col-xs-12">
+
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                  <div class="col">
+                    <h1 class="text-center sheep-in">Total Items : {{cart_items}}</h1>
+                  </div>
+
+                </div>
+                <div class="row" style="margin-top: 14px;">
+                  <div class="col">
+                    <h1 class="text-center sheep-in">Total Price : ${{total_products_price}}</h1>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+    </div>
+
+{% endblock content%}
+{% block script %}
+<script>
+var al=document.getElementById('con');
+al.onclick=function(){
+alert("Thanks for using ! We're working on Payment Integreation Module.\nHope You like it :)");
+}
+</script>
+{% endblock script %}

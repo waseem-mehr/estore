@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="425cb422-4cef-4eb8-b513-c7f83cc19ab1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/estore/context_processors.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/templates/estore/main.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/templates/estore/store.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/templates/estore/cart.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/templates/estore/checkout.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estore/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/estoreweb/settings.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1dD950zJVZvMnC8pDha9tefalYh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.24236253" />
+  </component>
+  <component name="RunManager">
+    <configuration name="0003_remove_product_prod_image" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="estoreweb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/estore/migrations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/estore/migrations/0003_remove_product_prod_image.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.0003_remove_product_prod_image" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="425cb422-4cef-4eb8-b513-c7f83cc19ab1" name="Default Changelist" comment="" />
+      <created>1591948609561</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591948609561</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1592133876615">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1592133876615" />
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1592322880832">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592322880832" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1592322880832">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592322880832" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1592322880832">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592322880832" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1592322880832">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592322880832" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1592217879325">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1592217879325" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1592491575694">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1592491575694" />
+  </component>
+</project>

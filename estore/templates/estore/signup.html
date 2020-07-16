@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Add BootStrap CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, PoppeR.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'estore/styles/style.css' %}" type="text/css"/>
+
+    <title>Signup</title>
+    <script>
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+</script>
+
+
+</head>
+<body>
+
+
+<div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <img src="{% static '/estore/images/download.png' %}" width="90" height="90" alt="">
+            </a>
+    </nav>
+</div>
+<div>
+</div>
+<div>
+    <div class="container bg-danger text-white" style="margin-top: 50px;>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 text-center d-flex justify-content-center">
+            {% if errors %}
+
+            {{errors}}
+                  {% endif %}
+        </div>
+        </div>
+</div>
+    <div class="container" style="margin-top: 20px;">
+          <div class="row" >
+            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 text-center d-flex justify-content-center">
+              <div class="container-x">
+        <form method="POST" action="/signup/">
+            {% csrf_token %}
+        <div class="sub-container">
+            <div class="row">
+                <span class="plc">Enter Your Username</span>
+            </div>
+          <div class="row">
+
+             {{form.username}}
+             </div>
+            <div class="row">
+                <span class="plc">Enter Your Passsword</span>
+            </div>
+             <div class="row">
+
+             {{form.password1}}
+
+			</div>
+            <div class="row">
+                <span class="plc">Re Enter Your Password</span>
+            </div>
+			<div class="row">
+
+			{{form.password2}}
+			</div>
+
+              </div>
+              <div style="margin-left: 30px;">
+              <div class="row">
+             <input type="submit"
+             style="margin-bottom: 50px;"
+             value="Signup" id=""
+             onclick="" class="btn-x"/>
+             </div>
+
+             </div>
+            </form>
+
+            </div>
+
+        </div>
+
+            </div>
+
+          </div>
+    </div>
+
+
+        <div class="container-fluid footer">
+  <div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+        <h1 class="text-center footer-text">&copy; Developed By Wasim 2020</h1>
+    </div>
+
+  </div>
+
+</div>
+
+    </div>
+</body>
+</html>
